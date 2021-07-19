@@ -1,25 +1,29 @@
 import {useState} from 'react'
+import CheckPal from './CheckPal';
 
 const InputForm = (props) => {
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState('asdasds')
   
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
   
   return(
-    <form>
-      <label> Input value: {input}
-        <br/>
-        <input
-          name='palindrome'
-          type='text'
-          placeholder='racecar'
-          value={input}
-          onChange={handleInputChange}
-        />
-      </label>
-    </form>
+    <div>
+      <form >
+        <label> Input value: {input}
+          <br/>
+          <input
+            name='palindrome'
+            type='text'
+            placeholder=''
+            value={input}
+            onChange={handleInputChange}
+          />
+        </label>
+      </form>
+      <CheckPal word={input}/>
+    </div>
     )
 }
 
